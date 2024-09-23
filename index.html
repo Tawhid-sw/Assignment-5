@@ -4,21 +4,117 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donate BD</title>
-    <!-- Google Fonts ( Inter ) -->
+    <!-- Google Fonts ( Quicksand ) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
+    />
+
+    <!-- Google Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
     />
 
     <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- TailwindCSS Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Quicksand", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
     <!-- JavaScript Link -->
     <script src="./script.js" defer></script>
   </head>
-  <body>
-    <h1></h1>
+  <body class="font-display">
+    <nav class="sticky top-0 z-50 backdrop-blur-lg bg-white/50 pb-5">
+      <div
+        class="flex items-center justify-between w-full px-6 py-3 font-bold text-gray-800 sm:px-12"
+      >
+        <button
+          id="blog"
+          class="block px-6 py-2 transition-colors duration-150 ease-linear bg-yellow-200 rounded-lg max-md:hidden hover:bg-yellow-300"
+        >
+          Blog
+        </button>
+        <a
+          href="#"
+          class="flex items-center justify-center gap-3 text-lg font-extrabold sm:text-xl icon"
+        >
+          <img src="./assets/logo.png" alt="icon" class="w-8 sm:w-12" />
+          Donate BD
+        </a>
+        <div class="flex flex-row items-center justify-center gap-6">
+          <div
+            id="balance"
+            title="Balance"
+            class="flex flex-row items-center justify-center gap-3 max-sm:hidden balance"
+          >
+            <img src="./assets/coin.png" alt="balance" />
+            7000 BDT
+          </div>
+          <span
+            class="block text-2xl md:hidden material-symbols-rounded"
+            id="menu"
+          >
+            menu
+          </span>
+        </div>
+      </div>
+      <div class="max-md:hidden flex items-center justify-center gap-6 mt-20">
+        <button class="px-5 py-2 rounded-lg bg-yellow-200 font-bold text-lg">
+          Donation
+        </button>
+
+        <button
+          class="px-5 py-2 rounded-lg border border-gray-400 transition-colors duration-150 ease-linear hover:border-transparent hover:bg-yellow-200 font-bold text-lg"
+        >
+          History
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div
+        class="absolute left-0 z-10 sm:hidden hidden w-full h-[100vh] px-2 top-14"
+      >
+        <div class="flex flex-row items-center justify-between w-full py-3">
+          <button
+            class="flex flex-row items-center justify-center gap-2 px-8 py-2 bg-yellow-200 rounded-lg"
+          >
+            <span class="material-symbols-rounded">rss_feed</span>
+            Blog
+          </button>
+          <div
+            class="flex flex-row items-center justify-end w-full gap-3 px-4 py-2 Balance"
+            id="balance"
+          >
+            <img src="./assets/coin.png" alt="balance" />
+            7000 BDT
+          </div>
+        </div>
+        <button
+          class="flex flex-row items-center justify-center w-full gap-2 px-8 py-2 bg-yellow-200 rounded-lg"
+        >
+          <span class="material-symbols-rounded">volunteer_activism</span>
+          Donation
+        </button>
+        <button
+          class="flex flex-row items-center justify-center w-full mt-2 gap-2 px-8 py-2 border-[2px] border-gray-400 rounded-lg"
+        >
+          <span class="material-symbols-rounded">history</span>
+          Hidtory
+        </button>
+      </div>
+    </nav>
   </body>
 </html>
