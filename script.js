@@ -1,8 +1,8 @@
 // alert("Hello");
 
-const main = document.getElementsByTagName("main");
-
-for (let i = 0; i <= 0; i++) {
-  {
-  }
-}
+// Appender
+Appender = (Element, Append) => {
+  const CreatElement = document.createElement(Element);
+  Append.appendChild(CreatElement);
+  return CreatElement;
+};
