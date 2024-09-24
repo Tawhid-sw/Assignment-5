@@ -1,8 +1,10 @@
 // alert("Hello");
 
-// Appender
-Appender = (Element, Append) => {
-  const CreatElement = document.createElement(Element);
-  Append.appendChild(CreatElement);
-  return CreatElement;
-};
+const Main = document.getElementById("main");
+const DonateBtn = document.querySelectorAll(".Donate-now");
+const DonateAmount = document.querySelectorAll(".DonateAmount");
+const getIndex = DonateBtn.forEach((btn, index) => {
+  btn.onclick = () => {
+    return index;
+  };
+});
