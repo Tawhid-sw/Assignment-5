@@ -36,11 +36,12 @@ const Alertcard = (title, Message, Status) => {
 };
 
 const Main = document.getElementById("main");
-const AccountBalance = document.getElementById("balance");
+const AccountBalance = document.querySelectorAll(".Balance");
 const DonateBtn = document.querySelectorAll(".Donate-now");
 const DonateAmount = document.querySelectorAll(".DonateAmount");
 const TotalDonate = document.querySelectorAll(".Total_Donate");
 const CampainName = document.querySelectorAll(".CampName");
+
 let Balance = 7000;
 const getIndex = DonateBtn.forEach((btn, index) => {
   btn.onclick = () => {
@@ -58,7 +59,10 @@ const getIndex = DonateBtn.forEach((btn, index) => {
       );
       NewBalance = parseInt(Balance) - Amount;
       Balance = NewBalance;
-      AccountBalance.innerHTML = `<img src="./assets/coin.png" alt="balance" /> ${Balance} BDT`;
+      AccountBalance.forEach((e) => {
+        e.innerHTML = `<img src="./assets/coin.png" alt="balance" /> ${Balance} BDT`;
+      });
+
       TotalDonate[
         index
       ].innerHTML = `<img src="./assets/coin.png" alt="coin" /> ${Amount} BDT`;
@@ -70,30 +74,45 @@ const getIndex = DonateBtn.forEach((btn, index) => {
   };
 });
 
-const btnDonation = document.getElementById("Donation");
+const btnDonation = document.querySelectorAll(".Donation");
 const Inseider = document.getElementById("inseider");
-const btnHistory = document.getElementById("history");
+const btnHistory = document.querySelectorAll(".History");
 const viewHistory = document.getElementById("viewHistory");
+const MobileMenu = document.getElementById("menu");
+const MenuView = document.getElementById("ViewMenu");
 
-btnHistory.onclick = () => {
-  Inseider.classList.remove("block");
-  Inseider.classList.add("hidden");
-  viewHistory.classList.remove("hidden");
-  viewHistory.classList.add("block");
-  btnHistory.classList.add("bg-yellow-200");
-  btnHistory.classList.remove("border");
-  btnDonation.classList.remove("bg-yellow-200");
-  btnDonation.classList.add("border");
-};
-btnDonation.onclick = () => {
-  Inseider.classList.add("block");
-  Inseider.classList.remove("hidden");
-  viewHistory.classList.add("hidden");
-  viewHistory.classList.remove("block");
-  btnHistory.classList.remove("bg-yellow-200");
-  btnHistory.classList.add("border");
-  btnDonation.classList.add("bg-yellow-200");
-  btnDonation.classList.remove("border");
+btnHistory.forEach((btn) => {
+  btn.onclick = () => {
+    Inseider.classList.remove("block");
+    Inseider.classList.add("hidden");
+    viewHistory.classList.remove("hidden");
+    viewHistory.classList.add("block");
+    btn.classList.add("bg-yellow-200");
+    btn.classList.remove("border");
+    btnDonation.forEach((btns) => {
+      btns.classList.remove("bg-yellow-200");
+      btns.classList.add("border");
+      MenuView.classList.add("hidden");
+    });
+  };
+});
+btnDonation.forEach((btn) => {
+  btn.onclick = () => {
+    Inseider.classList.add("block");
+    Inseider.classList.remove("hidden");
+    viewHistory.classList.add("hidden");
+    viewHistory.classList.remove("block");
+    btnHistory.forEach((btns) => {
+      btns.classList.remove("bg-yellow-200");
+      btns.classList.add("border");
+    });
+    btn.classList.add("bg-yellow-200");
+    btn.classList.remove("border");
+    MenuView.classList.add("hidden");
+  };
+});
+MobileMenu.onclick = () => {
+  MenuView.classList.toggle("hidden");
 };
 
 // History
@@ -108,4 +127,3 @@ History = (GetDate, Amounts, CampName) => {
   DonationTime.className = "text-sm font-bold text-gray-500 ";
   DonationTime.textContent = "Date " + GetDate;
 };
-// History();

@@ -76,9 +76,8 @@
         </a>
         <div class="flex flex-row items-center justify-center gap-6">
           <div
-            id="balance"
             title="Balance"
-            class="flex flex-row items-center justify-center gap-3 max-sm:hidden balance"
+            class="flex flex-row items-center justify-center gap-3 max-sm:hidden Balance"
           >
             <img src="./assets/coin.png" alt="balance" />
             7000 BDT
@@ -93,7 +92,7 @@
       </div>
       <div class="flex items-center justify-center gap-6 mt-20 max-md:hidden">
         <button
-          class="px-5 py-2 text-lg font-bold bg-yellow-200 rounded-lg transition-colors duration-150 ease-linear border-gray-400 hover:border-transparent hover:bg-yellow-200"
+          class="px-5 py-2 text-lg font-bold bg-yellow-200 rounded-lg transition-colors duration-150 ease-linear border-gray-400 hover:border-transparent hover:bg-yellow-200 Donation"
           id="Donation"
         >
           Donation
@@ -101,14 +100,15 @@
 
         <button
           id="history"
-          class="px-5 py-2 text-lg font-bold transition-colors duration-150 ease-linear border border-gray-400 rounded-lg hover:border-transparent hover:bg-yellow-200"
+          class="px-5 py-2 text-lg font-bold transition-colors duration-150 ease-linear border border-gray-400 rounded-lg hover:border-transparent hover:bg-yellow-200 History"
         >
           History
         </button>
       </div>
       <!-- Mobile menu -->
       <div
-        class="absolute left-0 z-10 sm:hidden hidden w-full h-[100vh] px-2 top-14"
+        id="ViewMenu"
+        class="absolute left-0 z-10 md:hidden hidden w-full h-[100vh] px-2 top-14 bg-white"
       >
         <div class="flex flex-row items-center justify-between w-full py-3">
           <button
@@ -118,21 +118,20 @@
             Blog
           </button>
           <div
-            class="flex flex-row items-center justify-end w-full gap-3 px-4 py-2 Balance"
-            id="balance"
+            class="sm:hidden flex flex-row items-center justify-end w-full gap-3 px-4 py-2 Balance font-bold"
           >
             <img src="./assets/coin.png" alt="balance" />
             7000 BDT
           </div>
         </div>
         <button
-          class="flex flex-row items-center justify-center w-full gap-2 px-8 py-2 bg-yellow-200 rounded-lg"
+          class="flex flex-row items-center justify-center w-full gap-2 px-8 py-2 bg-yellow-200 rounded-lg Donation"
         >
           <span class="material-symbols-rounded">volunteer_activism</span>
           Donation
         </button>
         <button
-          class="flex flex-row items-center justify-center w-full mt-2 gap-2 px-8 py-2 border-[2px] border-gray-400 rounded-lg"
+          class="flex flex-row items-center justify-center w-full mt-2 gap-2 px-8 py-2 border border-gray-400 rounded-lg History"
         >
           <span class="material-symbols-rounded">history</span>
           Hidtory
