@@ -119,7 +119,7 @@ MobileMenu.onclick = () => {
 History = (GetDate, Amounts, CampName) => {
   const viewHistory = document.getElementById("viewHistory");
   const Div = Appender("div", viewHistory);
-  Div.className = "w-full mb-6";
+  Div.className = "w-full mb-12";
   const DonationName = Appender("h1", Div);
   DonationName.className = "mb-2 text-lg font-bold text-gray-800 md:text-xl";
   DonationName.textContent = Amounts + " BTD " + CampName;

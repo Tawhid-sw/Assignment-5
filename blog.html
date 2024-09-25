@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate BD</title>
+    <!-- Google Fonts ( Quicksand ) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Google Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- TailwindCSS Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Quicksand", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer {
+        .fx-row {
+          @apply ml-6 flex items-center justify-start gap-3 flex-row font-bold;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-display">
+    <nav class="sticky top-0 z-10 pb-5 backdrop-blur-lg bg-white/50">
+      <div
+        class="flex flex-row items-center justify-between w-full px-6 py-3 font-bold text-gray-800 sm:px-12"
+      >
+        <a
+          href="./index.html"
+          class="flex items-center justify-center gap-3 text-lg font-extrabold sm:text-xl icon"
+        >
+          <img src="./assets/logo.png" alt="icon" class="w-8 sm:w-12" />
+          Donate BD
+        </a>
+        <a
+          id="blog"
+          href="./index.html"
+          class="block px-6 py-2 transition-colors duration-150 ease-linear bg-yellow-200 rounded-lg hover:bg-yellow-300"
+        >
+          Blog
+        </a>
+      </div>
+    </nav>
+    <main class="px-8 py-6 md:px-16 sm:px-12">
+      <h1
+        class="mb-8 text-lg font-bold fx-row md:text-3xl sm:text-2xl md:mb-16"
+      >
+        Importent FAQ
+        <span class="material-symbols-rounded">quiz</span>
+      </h1>
+      <section class="mb-8">
+        <h1 class="mb-2 text-lg font-extrabold md:text-xl">
+          What is the Document Object Model ( DOM ) ?
+        </h1>
+        <article class="text-sm font-bold text-gray-500">
+          Answer : DOM is a programming interface for HTML and XML documents
+        </article>
+      </section>
+      <section class="mb-8">
+        <h1 class="mb-2 text-lg font-extrabold md:text-xl">
+          How do you select an element from the DOM ?
+        </h1>
+        <article class="text-sm font-bold text-gray-500">
+          Answer : We can select DOM elements using getElementById or
+          querySelector like : const Element = document.getElementById('Element
+          id name')
+        </article>
+      </section>
+      <section class="mb-8">
+        <h1 class="mb-2 text-lg font-extrabold md:text-xl">
+          What is event delegation in the context of the DOM, and why is it
+          useful ?
+        </h1>
+        <article class="text-sm font-bold text-gray-500">
+          Answer : The event delegation allows the parent element to handle
+          events for its children using a single listener.
+        </article>
+      </section>
+      <section class="mb-8">
+        <h1 class="mb-2 text-lg font-extrabold md:text-xl">
+          How do you manipulate an element's attributes and styles using the DOM
+          ?
+        </h1>
+        <article class="text-sm font-bold text-gray-500">
+          Answer : Mnipulate DOM elements Like : element.setAttribute("src",
+          "image.jpg"); let src = element.getAttribute("src");
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
