@@ -93,7 +93,7 @@
       </div>
       <div class="flex items-center justify-center gap-6 mt-20 max-md:hidden">
         <button
-          class="px-5 py-2 text-lg font-bold bg-yellow-200 rounded-lg transition-colors duration-150 ease-linear border-gray-400 hover:border-transparent hover:bg-yellow-200 Donation"
+          class="px-5 py-2 text-lg font-bold transition-colors duration-150 ease-linear bg-yellow-200 border-gray-400 rounded-lg hover:border-transparent hover:bg-yellow-200 Donation"
           id="Donation"
         >
           Donation
@@ -112,14 +112,15 @@
         class="absolute left-0 z-10 md:hidden hidden w-full h-[100vh] px-2 top-14 bg-white"
       >
         <div class="flex flex-row items-center justify-between w-full py-3">
-          <button
+          <a
+            href="./blog.html"
             class="flex flex-row items-center justify-center gap-2 px-8 py-2 bg-yellow-200 rounded-lg"
           >
             <span class="material-symbols-rounded">rss_feed</span>
             Blog
-          </button>
+          </a>
           <div
-            class="sm:hidden flex flex-row items-center justify-end w-full gap-3 px-4 py-2 Balance font-bold"
+            class="flex flex-row items-center justify-end w-full gap-3 px-4 py-2 font-bold sm:hidden Balance"
           >
             <img src="./assets/coin.png" alt="balance" />
             7000 BDT
@@ -132,7 +133,7 @@
           Donation
         </button>
         <button
-          class="flex flex-row items-center justify-center w-full mt-2 gap-2 px-8 py-2 border border-gray-400 rounded-lg History"
+          class="flex flex-row items-center justify-center w-full gap-2 px-8 py-2 mt-2 border border-gray-400 rounded-lg History"
         >
           <span class="material-symbols-rounded">history</span>
           Hidtory
