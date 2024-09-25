@@ -40,6 +40,7 @@ const AccountBalance = document.getElementById("balance");
 const DonateBtn = document.querySelectorAll(".Donate-now");
 const DonateAmount = document.querySelectorAll(".DonateAmount");
 const TotalDonate = document.querySelectorAll(".Total_Donate");
+const CampainName = document.querySelectorAll(".CampName");
 let Balance = 7000;
 const getIndex = DonateBtn.forEach((btn, index) => {
   btn.onclick = () => {
@@ -62,7 +63,49 @@ const getIndex = DonateBtn.forEach((btn, index) => {
         index
       ].innerHTML = `<img src="./assets/coin.png" alt="coin" /> ${Amount} BDT`;
       DonateAmount[index].value = "";
-      console.log(Amount);
+      const date = new Date();
+      History(date, Amount, CampainName[index].innerText);
+      console.log(CampainName);
     }
   };
 });
+
+const btnDonation = document.getElementById("Donation");
+const Inseider = document.getElementById("inseider");
+const btnHistory = document.getElementById("history");
+const viewHistory = document.getElementById("viewHistory");
+
+btnHistory.onclick = () => {
+  Inseider.classList.remove("block");
+  Inseider.classList.add("hidden");
+  viewHistory.classList.remove("hidden");
+  viewHistory.classList.add("block");
+  btnHistory.classList.add("bg-yellow-200");
+  btnHistory.classList.remove("border");
+  btnDonation.classList.remove("bg-yellow-200");
+  btnDonation.classList.add("border");
+};
+btnDonation.onclick = () => {
+  Inseider.classList.add("block");
+  Inseider.classList.remove("hidden");
+  viewHistory.classList.add("hidden");
+  viewHistory.classList.remove("block");
+  btnHistory.classList.remove("bg-yellow-200");
+  btnHistory.classList.add("border");
+  btnDonation.classList.add("bg-yellow-200");
+  btnDonation.classList.remove("border");
+};
+
+// History
+History = (GetDate, Amounts, CampName) => {
+  const viewHistory = document.getElementById("viewHistory");
+  const Div = Appender("div", viewHistory);
+  Div.className = "w-full mb-6";
+  const DonationName = Appender("h1", Div);
+  DonationName.className = "mb-2 text-lg font-bold text-gray-800 md:text-xl";
+  DonationName.textContent = Amounts + " BTD " + CampName;
+  const DonationTime = Appender("p", Div);
+  DonationTime.className = "text-sm font-bold text-gray-500 ";
+  DonationTime.textContent = "Date " + GetDate;
+};
+// History();
